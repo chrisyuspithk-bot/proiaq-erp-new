@@ -117,10 +117,11 @@
     const path = window.location.pathname.replace(/^\//, '').replace(/\/index\.html$/, '') || 'index.html';
     $$('.nav-item').forEach(item => {
       item.classList.remove('active');
-      const href = item.getAttribute('href');
+      var href = item.getAttribute('href');
       if (!href) return;
+      // Strip leading / for comparison
+      href = href.replace(/^\//, '');
       const hrefBase = href.replace(/\.html$/, '');
-      // Match: "finance/budgeting" against "finance/budgeting.html"
       if (path === href || path === hrefBase || path + '.html' === href) {
         item.classList.add('active');
         const section = item.closest('.nav-section');

@@ -16,79 +16,80 @@
 
   // Navigation structure
   const NAV = [
-    { type: 'item', href: 'index.html', icon: 'layout-dashboard', label: 'Dashboard' },
+    { type: 'item', href: '/index.html', icon: 'layout-dashboard', label: 'Dashboard' },
     { type: 'section', label: 'Finance', items: [
-      { href: 'finance/index.html', label: 'Overview' },
-      { href: 'finance/chart-of-accounts.html', label: 'Chart of Accounts' },
-      { href: 'finance/invoices.html', label: 'Invoices', badge: '24', badgeType: 'count' },
-      { href: 'finance/invoice-detail.html', label: '└ Invoice Detail', cls: 'sub-duplicate' },
-      { href: 'finance/payments.html', label: 'Payments' },
-      { href: 'finance/expenses.html', label: 'Expenses', badge: '3', badgeType: 'warn' },
-      { href: 'finance/budgeting.html', label: 'Budgeting' },
-      { href: 'finance/reports.html', label: 'Reports' },
+      { href: '/finance/index.html', label: 'Overview' },
+      { href: '/finance/chart-of-accounts.html', label: 'Chart of Accounts' },
+      { href: '/finance/invoices.html', label: 'Invoices', badge: '24', badgeType: 'count' },
+      { href: '/finance/invoice-detail.html', label: '└ Invoice Detail', cls: 'sub-duplicate' },
+      { href: '/finance/payments.html', label: 'Payments' },
+      { href: '/finance/expenses.html', label: 'Expenses', badge: '3', badgeType: 'warn' },
+      { href: '/finance/budgeting.html', label: 'Budgeting' },
+      { href: '/finance/reports.html', label: 'Reports' },
     ]},
     { type: 'section', label: 'Sales', items: [
-      { href: 'sales/index.html', label: 'Overview' },
-      { href: 'sales/pipeline.html', label: 'Pipeline', badge: '18', badgeType: 'info' },
-      { href: 'sales/customers.html', label: 'Customers' },
-      { href: 'sales/customer-detail.html', label: '└ Customer 360', cls: 'sub-duplicate' },
-      { href: 'sales/orders.html', label: 'Orders' },
-      { href: 'sales/quotes.html', label: 'Quotes' },
-      { href: 'sales/products.html', label: 'Products' },
+      { href: '/sales/index.html', label: 'Overview' },
+      { href: '/sales/pipeline.html', label: 'Pipeline', badge: '18', badgeType: 'info' },
+      { href: '/sales/customers.html', label: 'Customers' },
+      { href: '/sales/customer-detail.html', label: '└ Customer 360', cls: 'sub-duplicate' },
+      { href: '/sales/orders.html', label: 'Orders' },
+      { href: '/sales/quotes.html', label: 'Quotes' },
+      { href: '/sales/products.html', label: 'Products' },
     ]},
     { type: 'section', label: 'Inventory', items: [
-      { href: 'inventory/index.html', label: 'Overview' },
-      { href: 'inventory/products.html', label: 'Products' },
-      { href: 'inventory/product-detail.html', label: '└ Product Detail', cls: 'sub-duplicate' },
-      { href: 'inventory/stock.html', label: 'Stock Levels' },
-      { href: 'inventory/warehouses.html', label: 'Warehouses' },
-      { href: 'inventory/movements.html', label: 'Movements' },
+      { href: '/inventory/index.html', label: 'Overview' },
+      { href: '/inventory/products.html', label: 'Products' },
+      { href: '/inventory/product-detail.html', label: '└ Product Detail', cls: 'sub-duplicate' },
+      { href: '/inventory/stock.html', label: 'Stock Levels' },
+      { href: '/inventory/warehouses.html', label: 'Warehouses' },
+      { href: '/inventory/movements.html', label: 'Movements' },
     ]},
     { type: 'section', label: 'Procurement', items: [
-      { href: 'procurement/index.html', label: 'Overview' },
-      { href: 'procurement/purchase-orders.html', label: 'Purchase Orders' },
-      { href: 'procurement/suppliers.html', label: 'Suppliers' },
-      { href: 'procurement/goods-receipt.html', label: 'Goods Receipt' },
+      { href: '/procurement/index.html', label: 'Overview' },
+      { href: '/procurement/purchase-orders.html', label: 'Purchase Orders' },
+      { href: '/procurement/suppliers.html', label: 'Suppliers' },
+      { href: '/procurement/goods-receipt.html', label: 'Goods Receipt' },
     ]},
     { type: 'section', label: 'Production', items: [
-      { href: 'production/index.html', label: 'Overview' },
-      { href: 'production/bom.html', label: 'Bill of Materials' },
-      { href: 'production/work-orders.html', label: 'Work Orders' },
-      { href: 'production/planning.html', label: 'Planning' },
+      { href: '/production/index.html', label: 'Overview' },
+      { href: '/production/bom.html', label: 'Bill of Materials' },
+      { href: '/production/work-orders.html', label: 'Work Orders' },
+      { href: '/production/planning.html', label: 'Planning' },
     ]},
     { type: 'section', label: 'Human Resources', items: [
-      { href: 'hr/index.html', label: 'Overview' },
-      { href: 'hr/employees.html', label: 'Employees' },
-      { href: 'hr/employee-detail.html', label: '└ Employee Profile', cls: 'sub-duplicate' },
-      { href: 'hr/attendance.html', label: 'Attendance' },
-      { href: 'hr/leave.html', label: 'Leave', badge: '5', badgeType: 'warn' },
-      { href: 'hr/payroll.html', label: 'Payroll' },
-      { href: 'hr/performance.html', label: 'Performance' },
+      { href: '/hr/index.html', label: 'Overview' },
+      { href: '/hr/employees.html', label: 'Employees' },
+      { href: '/hr/employee-detail.html', label: '└ Employee Profile', cls: 'sub-duplicate' },
+      { href: '/hr/attendance.html', label: 'Attendance' },
+      { href: '/hr/leave.html', label: 'Leave', badge: '5', badgeType: 'warn' },
+      { href: '/hr/payroll.html', label: 'Payroll' },
+      { href: '/hr/performance.html', label: 'Performance' },
     ]},
     { type: 'section', label: 'Projects', items: [
-      { href: 'projects/index.html', label: 'Overview' },
-      { href: 'projects/list.html', label: 'All Projects' },
-      { href: 'projects/detail.html', label: 'Project Detail' },
+      { href: '/projects/index.html', label: 'Overview' },
+      { href: '/projects/list.html', label: 'All Projects' },
+      { href: '/projects/detail.html', label: 'Project Detail' },
     ]},
-    { type: 'item', href: 'reports/index.html', icon: 'bar-chart-3', label: 'Reports' },
-    { type: 'item', href: 'reports/builder.html', icon: 'wrench', label: 'Report Builder' },
-    { type: 'item', href: 'ai-insights/index.html', icon: 'sparkles', label: 'AI Insights', badge: 'New', badgeType: 'info' },
+    { type: 'item', href: '/reports/index.html', icon: 'bar-chart-3', label: 'Reports' },
+    { type: 'item', href: '/reports/builder.html', icon: 'wrench', label: 'Report Builder' },
+    { type: 'item', href: '/ai-insights/index.html', icon: 'sparkles', label: 'AI Insights', badge: 'New', badgeType: 'info' },
     { type: 'section', label: 'Settings', items: [
-      { href: 'settings/index.html', label: 'General' },
-      { href: 'settings/users-roles.html', label: 'Users & Roles' },
-      { href: 'settings/workflows.html', label: 'Workflows' },
-      { href: 'settings/company.html', label: 'Company' },
-      { href: 'settings/audit-log.html', label: 'Audit Log' },
+      { href: '/settings/index.html', label: 'General' },
+      { href: '/settings/users-roles.html', label: 'Users & Roles' },
+      { href: '/settings/workflows.html', label: 'Workflows' },
+      { href: '/settings/company.html', label: 'Company' },
+      { href: '/settings/audit-log.html', label: 'Audit Log' },
     ]},
   ];
 
   function isActive(href) {
     const cp = getCurrentPath();
-    if (cp === 'index.html' && href === 'index.html') return true;
-    if (href === 'index.html') return false;
-    // Match: cp="finance/invoices" against href="finance/invoices.html"
-    const hrefBase = href.replace(/\.html$/, '');
-    return cp === hrefBase || cp.startsWith(hrefBase + '/');
+    // Strip leading / from href for comparison
+    const h = href.replace(/^\//, '');
+    if (cp === 'index.html' && h === 'index.html') return true;
+    if (h === 'index.html') return false;
+    const hBase = h.replace(/\.html$/, '');
+    return cp === hBase || cp.startsWith(hBase + '/');
   }
 
   function renderNavItem(item, depth) {

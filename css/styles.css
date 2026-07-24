@@ -363,6 +363,16 @@ input, select, textarea {
   font-size: 0.8125rem;
 }
 
+.nav-item.sub-duplicate {
+  font-size: 0.75rem;
+  opacity: 0.65;
+  padding-left: calc(var(--space-3) + 36px) !important;
+}
+.nav-item.sub-duplicate:hover,
+.nav-item.sub-duplicate.active {
+  opacity: 1;
+}
+
 /* Sidebar Footer */
 .sidebar-footer {
   padding: var(--space-3) var(--space-3);

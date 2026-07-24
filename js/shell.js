@@ -21,6 +21,7 @@
       { href: 'finance/index.html', label: 'Overview' },
       { href: 'finance/chart-of-accounts.html', label: 'Chart of Accounts' },
       { href: 'finance/invoices.html', label: 'Invoices', badge: '24', badgeType: 'count' },
+      { href: 'finance/invoice-detail.html', label: '└ Invoice Detail', cls: 'sub-duplicate' },
       { href: 'finance/payments.html', label: 'Payments' },
       { href: 'finance/expenses.html', label: 'Expenses', badge: '3', badgeType: 'warn' },
       { href: 'finance/budgeting.html', label: 'Budgeting' },
@@ -30,6 +31,7 @@
       { href: 'sales/index.html', label: 'Overview' },
       { href: 'sales/pipeline.html', label: 'Pipeline', badge: '18', badgeType: 'info' },
       { href: 'sales/customers.html', label: 'Customers' },
+      { href: 'sales/customer-detail.html', label: '└ Customer 360', cls: 'sub-duplicate' },
       { href: 'sales/orders.html', label: 'Orders' },
       { href: 'sales/quotes.html', label: 'Quotes' },
       { href: 'sales/products.html', label: 'Products' },
@@ -37,6 +39,7 @@
     { type: 'section', label: 'Inventory', items: [
       { href: 'inventory/index.html', label: 'Overview' },
       { href: 'inventory/products.html', label: 'Products' },
+      { href: 'inventory/product-detail.html', label: '└ Product Detail', cls: 'sub-duplicate' },
       { href: 'inventory/stock.html', label: 'Stock Levels' },
       { href: 'inventory/warehouses.html', label: 'Warehouses' },
       { href: 'inventory/movements.html', label: 'Movements' },
@@ -56,6 +59,7 @@
     { type: 'section', label: 'Human Resources', items: [
       { href: 'hr/index.html', label: 'Overview' },
       { href: 'hr/employees.html', label: 'Employees' },
+      { href: 'hr/employee-detail.html', label: '└ Employee Profile', cls: 'sub-duplicate' },
       { href: 'hr/attendance.html', label: 'Attendance' },
       { href: 'hr/leave.html', label: 'Leave', badge: '5', badgeType: 'warn' },
       { href: 'hr/payroll.html', label: 'Payroll' },
@@ -88,17 +92,18 @@
 
   function renderNavItem(item, depth) {
     const active = isActive(item.href);
+    const extraCls = item.cls ? ' ' + item.cls : '';
     const pad = depth > 0 ? ' style="padding-left:' + (28 + (depth - 1) * 16) + 'px;"' : '';
     let badgeHtml = '';
     if (item.badge) {
-      badgeHtml = `<span class="nav-badge ${item.badgeType || 'count'}">${item.badge}</span>`;
+      badgeHtml = '<span class="nav-badge ' + (item.badgeType || 'count') + '">' + item.badge + '</span>';
     }
     const iconHtml = item.icon
-      ? `<i data-lucide="${item.icon}"></i>`
+      ? '<i data-lucide="' + item.icon + '"></i>'
       : '';
-    return `<a href="${item.href}" class="nav-item${active ? ' active' : ''}"${pad}>
-      ${iconHtml}<span class="nav-label">${item.label}</span>${badgeHtml}
-    </a>`;
+    return '<a href="' + item.href + '" class="nav-item' + (active ? ' active' : '') + extraCls + '"' + pad + '>' +
+      iconHtml + '<span class="nav-label">' + item.label + '</span>' + badgeHtml +
+    '</a>';
   }
 
   function renderSidebar() {
@@ -223,7 +228,27 @@
   window.PROIAQ.injectShell = injectShell;
   window.PROIAQ.pageContent = function (html) {
     const el = document.getElementById('page-content');
-    if (el) el.innerHTML = html;
+    if (!el) return;
+    // Extract <script> tags — innerHTML doesn't execute them
+    const scripts = [];
+    const clean = html.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, function (match, code) {
+      scripts.push(code);
+      return '';
+    });
+    el.innerHTML = clean;
+    // Execute extracted scripts
+    scripts.forEach(function (code) {
+      try {
+        const fn = new Function(code);
+        fn();
+      } catch (e) {
+        console.error('Page script error:', e);
+      }
+    });
+    // Re-render icons
+    if (typeof lucide !== 'undefined') {
+      setTimeout(function () { lucide.createIcons(); }, 50);
+    }
   };
 
   // Auto-inject on DOM ready

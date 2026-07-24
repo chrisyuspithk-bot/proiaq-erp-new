@@ -107,11 +107,15 @@
   }
 
   // --- Active Nav Highlighting ---
-  function setActiveNav(path) {
-    $$('.nav-item').forEach(item => item.classList.remove('active'));
+  function setActiveNav() {
+    const path = window.location.pathname.replace(/^\//, '').replace(/\/index\.html$/, '') || 'index.html';
     $$('.nav-item').forEach(item => {
+      item.classList.remove('active');
       const href = item.getAttribute('href');
-      if (href === path || (path === '/' && href === 'index.html')) {
+      if (!href) return;
+      const hrefBase = href.replace(/\.html$/, '');
+      // Match: "finance/budgeting" against "finance/budgeting.html"
+      if (path === href || path === hrefBase || path + '.html' === href) {
         item.classList.add('active');
         const section = item.closest('.nav-section');
         if (section) section.classList.add('open');
@@ -281,19 +285,11 @@
     initResponsiveSearch();
     initLucide();
 
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    setActiveNav(path);
+    setActiveNav();
 
     console.log('PRO-IAQ ERP Suite initialized');
   }
 
-  // Expose for shell.js to call after injection
+  // Expose for shell.js / index.html to call after DOM is ready
   window.initMain = init;
-
-  // Auto-run for non-shell pages (e.g. index.html with hardcoded sidebar)
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
 })();

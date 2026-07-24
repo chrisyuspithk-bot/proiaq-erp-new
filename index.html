@@ -610,6 +610,9 @@
   <script src="js/charts.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      // Initialize shell (sidebar toggle, nav accordion, etc.)
+      if (typeof initMain === 'function') initMain();
+
       // Update timestamp
       const timeEl = document.getElementById('dashboard-time');
       if (timeEl) {

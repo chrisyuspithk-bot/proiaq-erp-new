@@ -4,316 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PRO-IAQ ERP Suite — Dashboard</title>
-  <meta name="description" content="PRO-IAQ ERP Suite Professional Edition 2026 — Intelligent ERP for Asia-Pacific enterprises.">
-
-  <!-- Fonts -->
+  <meta name="description" content="PRO-IAQ ERP Suite Professional Edition 2026">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
-  <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-  <!-- =========================================================
-       WAVE BACKGROUND
-       ========================================================= -->
-  <div class="wave-bg"></div>
-
-  <!-- =========================================================
-       APP SHELL
-       ========================================================= -->
-  <div class="app-shell">
-
-    <!-- =========================================================
-         SIDEBAR
-         ========================================================= -->
-    <aside class="sidebar" id="sidebar">
-      <!-- Brand -->
-      <div class="sidebar-brand">
-        <div class="brand-icon">P</div>
-        <div>
-          <div class="brand-text">PRO-IAQ</div>
-          <div class="brand-sub">Professional 2026</div>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <nav class="sidebar-nav">
-        <!-- Dashboard -->
-        <div class="nav-section">
-          <a href="index.html" class="nav-item active">
-            <i data-lucide="layout-dashboard"></i>
-            <span class="nav-label">Dashboard</span>
-          </a>
-        </div>
-
-        <!-- Finance -->
-        <div class="nav-section open">
-          <div class="nav-section-title">
-            <span class="nav-label">Finance</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="finance/index.html" class="nav-item">
-              <span class="nav-label">Overview</span>
-            </a>
-            <a href="finance/chart-of-accounts.html" class="nav-item">
-              <span class="nav-label">Chart of Accounts</span>
-            </a>
-            <a href="finance/invoices.html" class="nav-item">
-              <span class="nav-label">Invoices</span>
-              <span class="nav-badge count">24</span>
-            </a>
-            <a href="finance/payments.html" class="nav-item">
-              <span class="nav-label">Payments</span>
-            </a>
-            <a href="finance/expenses.html" class="nav-item">
-              <span class="nav-label">Expenses</span>
-              <span class="nav-badge warn">3</span>
-            </a>
-            <a href="finance/budgeting.html" class="nav-item">
-              <span class="nav-label">Budgeting</span>
-            </a>
-            <a href="finance/reports.html" class="nav-item">
-              <span class="nav-label">Reports</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Sales -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Sales</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="sales/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
-            <a href="sales/pipeline.html" class="nav-item"><span class="nav-label">Pipeline</span><span class="nav-badge info">18</span></a>
-            <a href="sales/customers.html" class="nav-item"><span class="nav-label">Customers</span></a>
-            <a href="sales/orders.html" class="nav-item"><span class="nav-label">Orders</span></a>
-            <a href="sales/quotes.html" class="nav-item"><span class="nav-label">Quotes</span></a>
-            <a href="sales/products.html" class="nav-item"><span class="nav-label">Products</span></a>
-          </div>
-        </div>
-
-        <!-- Inventory -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Inventory</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="inventory/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
-            <a href="inventory/products.html" class="nav-item"><span class="nav-label">Products</span></a>
-            <a href="inventory/stock.html" class="nav-item"><span class="nav-label">Stock Levels</span></a>
-            <a href="inventory/warehouses.html" class="nav-item"><span class="nav-label">Warehouses</span></a>
-            <a href="inventory/movements.html" class="nav-item"><span class="nav-label">Movements</span></a>
-          </div>
-        </div>
-
-        <!-- Procurement -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Procurement</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="procurement/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
-            <a href="procurement/purchase-orders.html" class="nav-item"><span class="nav-label">Purchase Orders</span></a>
-            <a href="procurement/suppliers.html" class="nav-item"><span class="nav-label">Suppliers</span></a>
-            <a href="procurement/goods-receipt.html" class="nav-item"><span class="nav-label">Goods Receipt</span></a>
-          </div>
-        </div>
-
-        <!-- Production -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Production</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="production/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
-            <a href="production/bom.html" class="nav-item"><span class="nav-label">Bill of Materials</span></a>
-            <a href="production/work-orders.html" class="nav-item"><span class="nav-label">Work Orders</span></a>
-            <a href="production/planning.html" class="nav-item"><span class="nav-label">Planning</span></a>
-          </div>
-        </div>
-
-        <!-- HR -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Human Resources</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="hr/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
-            <a href="hr/employees.html" class="nav-item"><span class="nav-label">Employees</span></a>
-            <a href="hr/attendance.html" class="nav-item"><span class="nav-label">Attendance</span></a>
-            <a href="hr/leave.html" class="nav-item"><span class="nav-label">Leave</span><span class="nav-badge warn">5</span></a>
-            <a href="hr/payroll.html" class="nav-item"><span class="nav-label">Payroll</span></a>
-            <a href="hr/performance.html" class="nav-item"><span class="nav-label">Performance</span></a>
-          </div>
-        </div>
-
-        <!-- Projects -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Projects</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="projects/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
-            <a href="projects/list.html" class="nav-item"><span class="nav-label">All Projects</span></a>
-            <a href="projects/detail.html" class="nav-item"><span class="nav-label">Project Detail</span></a>
-          </div>
-        </div>
-
-        <!-- Reports -->
-        <div class="nav-section">
-          <a href="reports/index.html" class="nav-item">
-            <i data-lucide="bar-chart-3"></i>
-            <span class="nav-label">Reports</span>
-          </a>
-        </div>
-
-        <!-- AI Insights -->
-        <div class="nav-section">
-          <a href="ai-insights/index.html" class="nav-item">
-            <i data-lucide="sparkles"></i>
-            <span class="nav-label">AI Insights</span>
-            <span class="nav-badge info">New</span>
-          </a>
-        </div>
-
-        <!-- Settings -->
-        <div class="nav-section">
-          <div class="nav-section-title">
-            <span class="nav-label">Settings</span>
-            <i data-lucide="chevron-right" class="nav-chevron"></i>
-          </div>
-          <div class="nav-sub">
-            <a href="settings/index.html" class="nav-item"><span class="nav-label">General</span></a>
-            <a href="settings/users-roles.html" class="nav-item"><span class="nav-label">Users &amp; Roles</span></a>
-            <a href="settings/workflows.html" class="nav-item"><span class="nav-label">Workflows</span></a>
-            <a href="settings/company.html" class="nav-item"><span class="nav-label">Company</span></a>
-            <a href="settings/audit-log.html" class="nav-item"><span class="nav-label">Audit Log</span></a>
-          </div>
-        </div>
-      </nav>
-
-      <!-- Sidebar Footer -->
-      <div class="sidebar-footer">
-        <div class="sidebar-user">
-          <div class="avatar">CY</div>
-          <div>
-            <div class="nav-label" style="color:white;font-size:0.8125rem;font-weight:600;">Chris Yu</div>
-            <div style="font-size:0.7rem;color:var(--text-sidebar);">Administrator</div>
-          </div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Sidebar Toggle -->
-    <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle Sidebar">
-      <i data-lucide="panel-left"></i>
-    </button>
-
-    <!-- Sidebar Overlay (mobile) -->
-    <div class="sidebar-overlay"></div>
-
-    <!-- =========================================================
-         MAIN CONTENT AREA
-         ========================================================= -->
-    <main class="main-area">
-
-      <!-- =========================================================
-           TOP HEADER
-           ========================================================= -->
-      <header class="top-header">
-        <!-- Mobile menu trigger -->
-        <button class="header-mobile-trigger" title="Menu">
-          <i data-lucide="menu"></i>
-        </button>
-
-        <!-- Global Search -->
-        <div class="header-search">
-          <i data-lucide="search"></i>
-          <input type="text" placeholder="Search across modules… (Ctrl+K)">
-        </div>
-
-        <!-- Header Actions -->
-        <div class="header-actions">
-          <!-- Company Switcher -->
-          <div class="company-switcher">
-            <i data-lucide="building-2"></i>
-            <span>PRO-IAQ HK Ltd.</span>
-            <i data-lucide="chevron-down" style="width:14px;height:14px;"></i>
-          </div>
-
-          <div class="header-divider"></div>
-
-          <!-- Notifications -->
-          <button class="header-btn" title="Notifications">
-            <i data-lucide="bell"></i>
-            <span class="badge-count">3</span>
-          </button>
-
-          <!-- Messages -->
-          <button class="header-btn" title="Messages">
-            <i data-lucide="mail"></i>
-            <span class="dot pulse"></span>
-          </button>
-
-          <!-- Quick Create -->
-          <button class="btn-primary" id="quick-create-btn">
-            <i data-lucide="plus"></i>
-            <span>Quick Create</span>
-          </button>
-
-          <!-- User Avatar -->
-          <div class="avatar" title="Chris Yu — Administrator">CY</div>
-        </div>
-      </header>
-
-      <!-- =========================================================
-           CONTENT — DASHBOARD
-           ========================================================= -->
-      <div class="content-area">
-
-        <!-- Page Header -->
-        <div class="page-header">
-          <div class="page-header-left">
-            <h1>Executive Overview</h1>
-            <p class="text-sm text-muted">Last updated: <span id="dashboard-time">Just now</span> · FY 2026</p>
-          </div>
-          <div class="page-header-actions">
-            <button class="btn-secondary btn-sm">
-              <i data-lucide="download"></i> Export
-            </button>
-            <button class="btn-secondary btn-sm">
-              <i data-lucide="refresh-cw"></i> Refresh
-            </button>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="text-sm text-muted">Period:</span>
-              <select class="form-select" style="width:auto;min-width:140px;">
-                <option>FY 2026</option>
-                <option>Q2 2026</option>
-                <option>Q1 2026</option>
-                <option>FY 2025</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- =========================================================
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="js/main.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    PROIAQ.pageContent(`<!-- =========================================================
              KPI ROW
              ========================================================= -->
         <div class="grid grid-4 mb-6">
@@ -597,45 +305,18 @@
               </div>
             </div>
           </div>
-        </div>
-
-      </div><!-- /content-area -->
-    </main><!-- /main-area -->
-  </div><!-- /app-shell -->
-
-  <!-- =========================================================
-       SCRIPTS
-       ========================================================= -->
-  <script src="js/main.js"></script>
-  <script src="js/charts.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Initialize shell (sidebar toggle, nav accordion, etc.)
-      if (typeof initMain === 'function') initMain();
-
-      // Update timestamp
-      const timeEl = document.getElementById('dashboard-time');
-      if (timeEl) {
-        const now = new Date();
-        timeEl.textContent = now.toLocaleString('en-HK', {
-          day: '2-digit', month: 'short', year: 'numeric',
-          hour: '2-digit', minute: '2-digit'
-        });
-      }
-
-      // Initialize all dashboard charts
-      if (typeof PROIAQ !== 'undefined') {
-        PROIAQ.initRevenueChart('revenueChart');
-        PROIAQ.initRegionChart('regionChart');
-        PROIAQ.initCashFlowChart('cashFlowChart');
-        PROIAQ.initExpenseChart('expenseChart');
-      }
-
-      // Re-render Lucide icons after dynamic content
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
-    });
-  </script>
+        </div>`);
+    var timeEl = document.getElementById("dashboard-time");
+    if (timeEl) {
+      timeEl.textContent = new Date().toLocaleString("en-HK", {day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
+    }
+    PROIAQ.initRevenueChart("revenueChart");
+    PROIAQ.initRegionChart("regionChart");
+    PROIAQ.initCashFlowChart("cashFlowChart");
+    PROIAQ.initExpenseChart("expenseChart");
+    if (typeof lucide !== "undefined") lucide.createIcons();
+  }, 150);
+});
+</script>
 </body>
 </html>

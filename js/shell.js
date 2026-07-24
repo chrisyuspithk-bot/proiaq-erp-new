@@ -71,6 +71,7 @@
       { href: 'projects/detail.html', label: 'Project Detail' },
     ]},
     { type: 'item', href: 'reports/index.html', icon: 'bar-chart-3', label: 'Reports' },
+    { type: 'item', href: 'reports/builder.html', icon: 'wrench', label: 'Report Builder' },
     { type: 'item', href: 'ai-insights/index.html', icon: 'sparkles', label: 'AI Insights', badge: 'New', badgeType: 'info' },
     { type: 'section', label: 'Settings', items: [
       { href: 'settings/index.html', label: 'General' },

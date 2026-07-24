@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRO-IAQ ERP Suite — Dashboard</title>
+  <meta name="description" content="PRO-IAQ ERP Suite Professional Edition 2026 — Intelligent ERP for Asia-Pacific enterprises.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       WAVE BACKGROUND
+       ========================================================= -->
+  <div class="wave-bg"></div>
+
+  <!-- =========================================================
+       APP SHELL
+       ========================================================= -->
+  <div class="app-shell">
+
+    <!-- =========================================================
+         SIDEBAR
+         ========================================================= -->
+    <aside class="sidebar" id="sidebar">
+      <!-- Brand -->
+      <div class="sidebar-brand">
+        <div class="brand-icon">P</div>
+        <div>
+          <div class="brand-text">PRO-IAQ</div>
+          <div class="brand-sub">Professional 2026</div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        <!-- Dashboard -->
+        <div class="nav-section">
+          <a href="index.html" class="nav-item active">
+            <i data-lucide="layout-dashboard"></i>
+            <span class="nav-label">Dashboard</span>
+          </a>
+        </div>
+
+        <!-- Finance -->
+        <div class="nav-section open">
+          <div class="nav-section-title">
+            <span class="nav-label">Finance</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="finance/index.html" class="nav-item">
+              <span class="nav-label">Overview</span>
+            </a>
+            <a href="finance/chart-of-accounts.html" class="nav-item">
+              <span class="nav-label">Chart of Accounts</span>
+            </a>
+            <a href="finance/invoices.html" class="nav-item">
+              <span class="nav-label">Invoices</span>
+              <span class="nav-badge count">24</span>
+            </a>
+            <a href="finance/payments.html" class="nav-item">
+              <span class="nav-label">Payments</span>
+            </a>
+            <a href="finance/expenses.html" class="nav-item">
+              <span class="nav-label">Expenses</span>
+              <span class="nav-badge warn">3</span>
+            </a>
+            <a href="finance/budgeting.html" class="nav-item">
+              <span class="nav-label">Budgeting</span>
+            </a>
+            <a href="finance/reports.html" class="nav-item">
+              <span class="nav-label">Reports</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sales -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Sales</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="sales/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
+            <a href="sales/pipeline.html" class="nav-item"><span class="nav-label">Pipeline</span><span class="nav-badge info">18</span></a>
+            <a href="sales/customers.html" class="nav-item"><span class="nav-label">Customers</span></a>
+            <a href="sales/orders.html" class="nav-item"><span class="nav-label">Orders</span></a>
+            <a href="sales/quotes.html" class="nav-item"><span class="nav-label">Quotes</span></a>
+            <a href="sales/products.html" class="nav-item"><span class="nav-label">Products</span></a>
+          </div>
+        </div>
+
+        <!-- Inventory -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Inventory</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="inventory/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
+            <a href="inventory/products.html" class="nav-item"><span class="nav-label">Products</span></a>
+            <a href="inventory/stock.html" class="nav-item"><span class="nav-label">Stock Levels</span></a>
+            <a href="inventory/warehouses.html" class="nav-item"><span class="nav-label">Warehouses</span></a>
+            <a href="inventory/movements.html" class="nav-item"><span class="nav-label">Movements</span></a>
+          </div>
+        </div>
+
+        <!-- Procurement -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Procurement</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="procurement/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
+            <a href="procurement/purchase-orders.html" class="nav-item"><span class="nav-label">Purchase Orders</span></a>
+            <a href="procurement/suppliers.html" class="nav-item"><span class="nav-label">Suppliers</span></a>
+            <a href="procurement/goods-receipt.html" class="nav-item"><span class="nav-label">Goods Receipt</span></a>
+          </div>
+        </div>
+
+        <!-- Production -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Production</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="production/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
+            <a href="production/bom.html" class="nav-item"><span class="nav-label">Bill of Materials</span></a>
+            <a href="production/work-orders.html" class="nav-item"><span class="nav-label">Work Orders</span></a>
+            <a href="production/planning.html" class="nav-item"><span class="nav-label">Planning</span></a>
+          </div>
+        </div>
+
+        <!-- HR -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Human Resources</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="hr/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
+            <a href="hr/employees.html" class="nav-item"><span class="nav-label">Employees</span></a>
+            <a href="hr/attendance.html" class="nav-item"><span class="nav-label">Attendance</span></a>
+            <a href="hr/leave.html" class="nav-item"><span class="nav-label">Leave</span><span class="nav-badge warn">5</span></a>
+            <a href="hr/payroll.html" class="nav-item"><span class="nav-label">Payroll</span></a>
+            <a href="hr/performance.html" class="nav-item"><span class="nav-label">Performance</span></a>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Projects</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="projects/index.html" class="nav-item"><span class="nav-label">Overview</span></a>
+            <a href="projects/list.html" class="nav-item"><span class="nav-label">All Projects</span></a>
+            <a href="projects/detail.html" class="nav-item"><span class="nav-label">Project Detail</span></a>
+          </div>
+        </div>
+
+        <!-- Reports -->
+        <div class="nav-section">
+          <a href="reports/index.html" class="nav-item">
+            <i data-lucide="bar-chart-3"></i>
+            <span class="nav-label">Reports</span>
+          </a>
+        </div>
+
+        <!-- AI Insights -->
+        <div class="nav-section">
+          <a href="ai-insights/index.html" class="nav-item">
+            <i data-lucide="sparkles"></i>
+            <span class="nav-label">AI Insights</span>
+            <span class="nav-badge info">New</span>
+          </a>
+        </div>
+
+        <!-- Settings -->
+        <div class="nav-section">
+          <div class="nav-section-title">
+            <span class="nav-label">Settings</span>
+            <i data-lucide="chevron-right" class="nav-chevron"></i>
+          </div>
+          <div class="nav-sub">
+            <a href="settings/index.html" class="nav-item"><span class="nav-label">General</span></a>
+            <a href="settings/users-roles.html" class="nav-item"><span class="nav-label">Users &amp; Roles</span></a>
+            <a href="settings/workflows.html" class="nav-item"><span class="nav-label">Workflows</span></a>
+            <a href="settings/company.html" class="nav-item"><span class="nav-label">Company</span></a>
+            <a href="settings/audit-log.html" class="nav-item"><span class="nav-label">Audit Log</span></a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="avatar">CY</div>
+          <div>
+            <div class="nav-label" style="color:white;font-size:0.8125rem;font-weight:600;">Chris Yu</div>
+            <div style="font-size:0.7rem;color:var(--text-sidebar);">Administrator</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle Sidebar">
+      <i data-lucide="panel-left"></i>
+    </button>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- =========================================================
+         MAIN CONTENT AREA
+         ========================================================= -->
+    <main class="main-area">
+
+      <!-- =========================================================
+           TOP HEADER
+           ========================================================= -->
+      <header class="top-header">
+        <!-- Mobile menu trigger -->
+        <button class="header-mobile-trigger" title="Menu">
+          <i data-lucide="menu"></i>
+        </button>
+
+        <!-- Global Search -->
+        <div class="header-search">
+          <i data-lucide="search"></i>
+          <input type="text" placeholder="Search across modules… (Ctrl+K)">
+        </div>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Company Switcher -->
+          <div class="company-switcher">
+            <i data-lucide="building-2"></i>
+            <span>PRO-IAQ HK Ltd.</span>
+            <i data-lucide="chevron-down" style="width:14px;height:14px;"></i>
+          </div>
+
+          <div class="header-divider"></div>
+
+          <!-- Notifications -->
+          <button class="header-btn" title="Notifications">
+            <i data-lucide="bell"></i>
+            <span class="badge-count">3</span>
+          </button>
+
+          <!-- Messages -->
+          <button class="header-btn" title="Messages">
+            <i data-lucide="mail"></i>
+            <span class="dot pulse"></span>
+          </button>
+
+          <!-- Quick Create -->
+          <button class="btn-primary" id="quick-create-btn">
+            <i data-lucide="plus"></i>
+            <span>Quick Create</span>
+          </button>
+
+          <!-- User Avatar -->
+          <div class="avatar" title="Chris Yu — Administrator">CY</div>
+        </div>
+      </header>
+
+      <!-- =========================================================
+           CONTENT — DASHBOARD
+           ========================================================= -->
+      <div class="content-area">
+
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="page-header-left">
+            <div class="breadcrumbs">
+              <i data-lucide="home"></i>
+              <span>Dashboard</span>
+            </div>
+            <h1>Executive Overview</h1>
+            <p class="text-sm text-muted">Last updated: <span id="dashboard-time">Just now</span> · FY 2026</p>
+          </div>
+          <div class="page-header-actions">
+            <button class="btn-secondary btn-sm">
+              <i data-lucide="download"></i> Export
+            </button>
+            <button class="btn-secondary btn-sm">
+              <i data-lucide="refresh-cw"></i> Refresh
+            </button>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="text-sm text-muted">Period:</span>
+              <select class="form-select" style="width:auto;min-width:140px;">
+                <option>FY 2026</option>
+                <option>Q2 2026</option>
+                <option>Q1 2026</option>
+                <option>FY 2025</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             KPI ROW
+             ========================================================= -->
+        <div class="grid grid-4 mb-6">
+          <!-- Revenue -->
+          <div class="card kpi-card">
+            <div class="kpi-icon blue"><i data-lucide="dollar-sign"></i></div>
+            <div class="kpi-label">Total Revenue (YTD)</div>
+            <div class="kpi-value">HK$74.2M</div>
+            <div class="kpi-sub">+18.5% vs LY</div>
+            <div class="kpi-change up">
+              <i data-lucide="trending-up" style="width:14px;height:14px;"></i> +12.3%
+            </div>
+          </div>
+
+          <!-- Gross Profit -->
+          <div class="card kpi-card">
+            <div class="kpi-icon teal"><i data-lucide="pie-chart"></i></div>
+            <div class="kpi-label">Gross Margin</div>
+            <div class="kpi-value">38.2%</div>
+            <div class="kpi-sub">Target: 35%</div>
+            <div class="kpi-change up">
+              <i data-lucide="trending-up" style="width:14px;height:14px;"></i> +2.4pp
+            </div>
+          </div>
+
+          <!-- Outstanding Receivables -->
+          <div class="card kpi-card">
+            <div class="kpi-icon amber"><i data-lucide="clock"></i></div>
+            <div class="kpi-label">Outstanding AR</div>
+            <div class="kpi-value">HK$13.5M</div>
+            <div class="kpi-sub">Avg 32 days</div>
+            <div class="kpi-change down">
+              <i data-lucide="alert-circle" style="width:14px;height:14px;"></i> +5 days
+            </div>
+          </div>
+
+          <!-- Active Orders -->
+          <div class="card kpi-card">
+            <div class="kpi-icon green"><i data-lucide="package-check"></i></div>
+            <div class="kpi-label">Active Orders</div>
+            <div class="kpi-value">186</div>
+            <div class="kpi-sub">98.4% OTIF</div>
+            <div class="kpi-change up">
+              <i data-lucide="trending-up" style="width:14px;height:14px;"></i> 24 new this week
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             CHARTS ROW 1: Revenue Trend + Revenue by Region
+             ========================================================= -->
+        <div class="grid grid-2-1 mb-6">
+          <!-- Revenue & Profit Trend -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Revenue &amp; Profit Trend</h3>
+              <div style="display:flex;gap:8px;">
+                <button class="btn-ghost btn-sm active">12M</button>
+                <button class="btn-ghost btn-sm">6M</button>
+                <button class="btn-ghost btn-sm">3M</button>
+              </div>
+            </div>
+            <div class="card-body" style="height:360px;">
+              <div class="chart-container" style="height:100%;">
+                <canvas id="revenueChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Revenue by Region -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Revenue by Region</h3>
+              <i data-lucide="globe" style="width:16px;height:16px;color:var(--text-muted);"></i>
+            </div>
+            <div class="card-body" style="height:360px;">
+              <div class="chart-container" style="height:100%;">
+                <canvas id="regionChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             CHARTS ROW 2: Cash Flow + Expense Breakdown + AI Insights
+             ========================================================= -->
+        <div class="grid grid-3 mb-6">
+          <!-- Cash Flow -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Cash Flow</h3>
+              <span class="badge badge-success">Positive</span>
+            </div>
+            <div class="card-body" style="height:320px;">
+              <div class="chart-container" style="height:100%;">
+                <canvas id="cashFlowChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expense Breakdown -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Expense Breakdown</h3>
+              <span class="text-xs text-muted">June 2026</span>
+            </div>
+            <div class="card-body" style="height:320px;">
+              <div class="chart-container" style="height:100%;">
+                <canvas id="expenseChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Insights -->
+          <div class="card">
+            <div class="card-header">
+              <h3>
+                <i data-lucide="sparkles" style="width:18px;height:18px;color:var(--teal);margin-right:6px;"></i>
+                AI Insights
+              </h3>
+              <span class="badge badge-info pulse">Live</span>
+            </div>
+            <div class="card-body" style="height:320px;overflow-y:auto;">
+              <div class="ai-insight-item">
+                <div class="ai-insight-icon trend-up">
+                  <i data-lucide="trending-up"></i>
+                </div>
+                <div class="ai-insight-content">
+                  <div class="ai-insight-title">Revenue forecast: +22% for Q3</div>
+                  <div class="ai-insight-desc">Based on current pipeline velocity and seasonal trends in APAC markets, Q3 2026 revenue is projected at HK$28.5M.</div>
+                </div>
+              </div>
+              <div class="ai-insight-item">
+                <div class="ai-insight-icon alert">
+                  <i data-lucide="alert-triangle"></i>
+                </div>
+                <div class="ai-insight-content">
+                  <div class="ai-insight-title">Inventory alert: 3 SKUs below safety stock</div>
+                  <div class="ai-insight-desc">IAQ-Sensor-Pro, HEPA-Filter-XL, and Carbon-Cartridge-V2 will stock out within 14 days at current consumption rates.</div>
+                </div>
+              </div>
+              <div class="ai-insight-item">
+                <div class="ai-insight-icon info">
+                  <i data-lucide="users"></i>
+                </div>
+                <div class="ai-insight-content">
+                  <div class="ai-insight-title">Attrition risk detected in Engineering</div>
+                  <div class="ai-insight-desc">2 senior engineers show declining engagement scores. Recommend retention review within 7 days.</div>
+                </div>
+              </div>
+              <div class="ai-insight-item">
+                <div class="ai-insight-icon trend-down">
+                  <i data-lucide="clock"></i>
+                </div>
+                <div class="ai-insight-content">
+                  <div class="ai-insight-title">AR aging worsening: 61-90 day bucket +15%</div>
+                  <div class="ai-insight-desc">3 major accounts in Singapore overdue. Suggested: initiate dunning workflow for HK$2.8M outstanding.</div>
+                </div>
+              </div>
+              <div class="ai-insight-item">
+                <div class="ai-insight-icon trend-up">
+                  <i data-lucide="zap"></i>
+                </div>
+                <div class="ai-insight-content">
+                  <div class="ai-insight-title">Production efficiency at all-time high</div>
+                  <div class="ai-insight-desc">OEE reached 92.3% in June. Line 3 (Tsuen Wan) consistently outperforming by 8% vs other lines.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =========================================================
+             BOTTOM ROW: Recent Activity + Quick Actions
+             ========================================================= -->
+        <div class="grid grid-2 mb-6">
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Recent Activity</h3>
+              <a href="#" class="text-sm" style="color:var(--blue);">View All</a>
+            </div>
+            <div class="card-body condensed">
+              <div class="activity-item">
+                <div class="activity-dot" style="background:var(--teal);"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>PO-2026-0892</strong> approved — HK$142,500 · Tai Hing Supplies</div>
+                  <div class="activity-time">12 minutes ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot" style="background:var(--blue);"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>INV-2026-1642</strong> paid — HK$86,300 · ClearAir Singapore Pte Ltd</div>
+                  <div class="activity-time">34 minutes ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot" style="background:var(--green);"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Work Order #WO-4521</strong> completed — Line 3, Tsuen Wan</div>
+                  <div class="activity-time">1 hour ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot" style="background:var(--amber);"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Leave request</strong> submitted — Emily Chan (Jul 28–30)</div>
+                  <div class="activity-time">2 hours ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot" style="background:var(--text-muted);"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>New customer</strong> registered — Tokyo Air Systems K.K.</div>
+                  <div class="activity-time">3 hours ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-dot" style="background:var(--red);"></div>
+                <div class="activity-content">
+                  <div class="activity-text"><strong>Stock alert</strong> — IAQ-Sensor-Pro below reorder point (8 units)</div>
+                  <div class="activity-time">4 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Quick Actions</h3>
+            </div>
+            <div class="card-body condensed">
+              <div class="quick-actions-grid">
+                <button class="quick-action">
+                  <i data-lucide="file-plus"></i> New Invoice
+                </button>
+                <button class="quick-action">
+                  <i data-lucide="shopping-cart"></i> New Sales Order
+                </button>
+                <button class="quick-action">
+                  <i data-lucide="truck"></i> New Purchase Order
+                </button>
+                <button class="quick-action">
+                  <i data-lucide="user-plus"></i> Add Customer
+                </button>
+                <button class="quick-action">
+                  <i data-lucide="clipboard-list"></i> New Work Order
+                </button>
+                <button class="quick-action">
+                  <i data-lucide="calendar-plus"></i> Schedule Meeting
+                </button>
+              </div>
+
+              <div class="mt-6">
+                <h4 class="mb-4">Upcoming Deadlines</h4>
+                <div style="display:flex;flex-direction:column;gap:12px;">
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--border-light);border-radius:8px;">
+                    <div>
+                      <div class="text-sm font-medium">Quarterly GST Filing</div>
+                      <div class="text-xs text-muted">IRAS Singapore</div>
+                    </div>
+                    <span class="badge badge-warning">Jul 31</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--border-light);border-radius:8px;">
+                    <div>
+                      <div class="text-sm font-medium">Payroll Run — August</div>
+                      <div class="text-xs text-muted">HK &amp; SG entities</div>
+                    </div>
+                    <span class="badge badge-info">Aug 25</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--border-light);border-radius:8px;">
+                    <div>
+                      <div class="text-sm font-medium">Annual Audit Prep</div>
+                      <div class="text-xs text-muted">FY 2026 — PwC Hong Kong</div>
+                    </div>
+                    <span class="badge badge-neutral">Sep 15</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /content-area -->
+    </main><!-- /main-area -->
+  </div><!-- /app-shell -->
+
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Update timestamp
+      const timeEl = document.getElementById('dashboard-time');
+      if (timeEl) {
+        const now = new Date();
+        timeEl.textContent = now.toLocaleString('en-HK', {
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      }
+
+      // Initialize all dashboard charts
+      if (typeof PROIAQ !== 'undefined') {
+        PROIAQ.initRevenueChart('revenueChart');
+        PROIAQ.initRegionChart('regionChart');
+        PROIAQ.initCashFlowChart('cashFlowChart');
+        PROIAQ.initExpenseChart('expenseChart');
+      }
+
+      // Re-render Lucide icons after dynamic content
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

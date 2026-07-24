@@ -70,14 +70,14 @@
 
   // --- Navigation Section Accordion ---
   function initNavSections() {
+    // Direct click handlers on section titles
     $$('.nav-section').forEach(section => {
       const title = $('.nav-section-title', section);
       if (!title) return;
-
-      title.addEventListener('click', () => {
+      title.addEventListener('click', function (e) {
+        e.stopPropagation();
         const isOpen = section.classList.contains('open');
-        // Close all others
-        $$('.nav-section').forEach(s => s.classList.remove('open'));
+        $$('.nav-section').forEach(function (s) { s.classList.remove('open'); });
         if (!isOpen) {
           section.classList.add('open');
           state.activeNavSection = section;
@@ -87,23 +87,29 @@
       });
     });
 
+    // Also use event delegation on the sidebar nav as a fallback
+    const sidebarNav = $('.sidebar-nav');
+    if (sidebarNav) {
+      sidebarNav.addEventListener('click', function (e) {
+        var title = e.target.closest('.nav-section-title');
+        if (!title) return;
+        var section = title.closest('.nav-section');
+        if (!section) return;
+        e.stopPropagation();
+        var isOpen = section.classList.contains('open');
+        $$('.nav-section').forEach(function (s) { s.classList.remove('open'); });
+        if (!isOpen) {
+          section.classList.add('open');
+        }
+      });
+    }
+
     // Open section containing active nav item
     const activeItem = $('.nav-item.active');
     if (activeItem) {
       const section = activeItem.closest('.nav-section');
       if (section) section.classList.add('open');
     }
-
-    // Also open section based on current URL path
-    const path = window.location.pathname;
-    $$('.nav-item').forEach(item => {
-      const href = item.getAttribute('href');
-      if (href && path.includes(href.replace(/^\//, '').replace('index.html', ''))) {
-        item.classList.add('active');
-        const section = item.closest('.nav-section');
-        if (section) section.classList.add('open');
-      }
-    });
   }
 
   // --- Active Nav Highlighting ---

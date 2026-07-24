@@ -282,6 +282,18 @@ input, select, textarea {
   color: rgba(176, 190, 197, 0.5);
   white-space: nowrap;
   overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.nav-section-title:hover {
+  color: rgba(176, 190, 197, 0.85);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .nav-item {

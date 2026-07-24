@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoices — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="card"><div class="card-body condensed"> <div class="filter-bar">   <input class="form-input" placeholder="Search invoices..." style="min-width:240px;">   <select class="form-select"><option>All Status</option><option>Paid</option><option>Pending</option><option>Overdue</option></select>   <select class="form-select"><option>All Customers</option><option>ClearAir Singapore</option><option>Tokyo Air Systems</option></select>   <button class="btn-primary btn-sm"><i data-lucide="plus"></i> New Invoice</button> </div> <div class="table-wrapper"><table> <thead><tr><th>Invoice #</th><th>Customer</th><th>Date</th><th>Due Date</th><th>Amount</th><th>Status</th><th></th></tr></thead> <tbody> <tr><td class="font-medium">INV-2026-1642</td><td>ClearAir Singapore Pte Ltd</td><td>15 Jul 2026</td><td>14 Aug 2026</td><td class="font-semibold">HK$86,300</td><td><span class="badge badge-success">Paid</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1638</td><td>Tokyo Air Systems K.K.</td><td>12 Jul 2026</td><td>11 Aug 2026</td><td class="font-semibold">HK$142,000</td><td><span class="badge badge-success">Paid</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1635</td><td>Seoul Green Building Co.</td><td>10 Jul 2026</td><td>09 Aug 2026</td><td class="font-semibold">HK$67,500</td><td><span class="badge badge-warning">Pending</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1628</td><td>Equinix Hong Kong Ltd</td><td>05 Jul 2026</td><td>04 Aug 2026</td><td class="font-semibold">HK$420,000</td><td><span class="badge badge-warning">Pending</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1620</td><td>Bangkok Hospital Group</td><td>28 Jun 2026</td><td>28 Jul 2026</td><td class="font-semibold">HK$195,000</td><td><span class="badge badge-danger">Overdue</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1615</td><td>Samsung Biologics KR</td><td>22 Jun 2026</td><td>22 Jul 2026</td><td class="font-semibold">HK$580,000</td><td><span class="badge badge-danger">Overdue</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1610</td><td>HK Land Holdings</td><td>18 Jun 2026</td><td>18 Jul 2026</td><td class="font-semibold">HK$310,000</td><td><span class="badge badge-success">Paid</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">INV-2026-1605</td><td>Shanghai Tower Mgmt</td><td>14 Jun 2026</td><td>14 Jul 2026</td><td class="font-semibold">HK$92,400</td><td><span class="badge badge-success">Paid</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> </tbody></table></div> <div class="table-footer"><span>Showing 1–8 of 24 invoices</span> <div class="pagination"><button disabled><i data-lucide="chevron-left"></i></button><button class="active">1</button><button>2</button><button>3</button><button><i data-lucide="chevron-right"></i></button></div></div> </div></div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

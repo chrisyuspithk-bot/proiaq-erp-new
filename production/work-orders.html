@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Orders — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="grid grid-3 mb-6">   <div class="card kpi-card"><div class="kpi-icon blue"><i data-lucide="clipboard-list"></i></div><div class="kpi-label">Active Work Orders</div><div class="kpi-value">24</div></div>   <div class="card kpi-card"><div class="kpi-icon teal"><i data-lucide="gauge"></i></div><div class="kpi-label">Overall OEE</div><div class="kpi-value">92.3%</div></div>   <div class="card kpi-card"><div class="kpi-icon green"><i data-lucide="check-circle-2"></i></div><div class="kpi-label">On-Time Completion</div><div class="kpi-value">96.8%</div></div> </div> <div class="card"><div class="card-body condensed"> <div class="filter-bar">   <input class="form-input" placeholder="Search WO..." style="min-width:200px;">   <select class="form-select"><option>All Lines</option><option>Line 1 — Tsuen Wan</option><option>Line 2 — Tsuen Wan</option><option>Line 3 — Tsuen Wan</option></select>   <select class="form-select"><option>All Status</option><option>Planned</option><option>In Progress</option><option>Completed</option><option>On Hold</option></select>   <button class="btn-primary btn-sm"><i data-lucide="plus"></i> New WO</button> </div> <div class="table-wrapper"><table> <thead><tr><th>WO #</th><th>Product</th><th>Quantity</th><th>Line</th><th>Start</th><th>Due</th><th>Progress</th><th>Status</th></tr></thead> <tbody> <tr><td class="font-medium">WO-4521</td><td>IAQ Sensor Pro v3</td><td>500</td><td>Line 3 — TW</td><td>21 Jul</td><td>28 Jul</td><td><div class="progress-bar" style="width:120px;"><div class="fill green" style="width:85%;"></div></div><span class="text-xs text-muted ml-2">85%</span></td><td><span class="badge badge-info">In Progress</span></td></tr> <tr><td class="font-medium">WO-4518</td><td>HEPA Filter XL</td><td>200</td><td>Line 1 — TW</td><td>20 Jul</td><td>26 Jul</td><td><div class="progress-bar" style="width:120px;"><div class="fill green" style="width:45%;"></div></div><span class="text-xs text-muted ml-2">45%</span></td><td><span class="badge badge-info">In Progress</span></td></tr> <tr><td class="font-medium">WO-4515</td><td>Control Board Rev 4</td><td>1,000</td><td>Line 2 — TW</td><td>23 Jul</td><td>30 Jul</td><td><div class="progress-bar" style="width:120px;"><div class="fill blue" style="width:10%;"></div></div><span class="text-xs text-muted ml-2">10%</span></td><td><span class="badge badge-info">In Progress</span></td></tr> <tr><td class="font-medium">WO-4512</td><td>Carbon Cartridge V2</td><td>800</td><td>Line 3 — TW</td><td>19 Jul</td><td>24 Jul</td><td><div class="progress-bar" style="width:120px;"><div class="fill teal" style="width:100%;"></div></div><span class="text-xs text-muted ml-2">100%</span></td><td><span class="badge badge-success">Completed</span></td></tr> <tr><td class="font-medium">WO-4510</td><td>PM2.5 Sensor Module</td><td>2,000</td><td>Line 1 — TW</td><td>18 Jul</td><td>23 Jul</td><td><div class="progress-bar" style="width:120px;"><div class="fill teal" style="width:100%;"></div></div><span class="text-xs text-muted ml-2">100%</span></td><td><span class="badge badge-success">Completed</span></td></tr> </tbody></table></div> <div class="table-footer"><span>Showing 1–5 of 24 work orders</span> <div class="pagination"><button disabled><i data-lucide="chevron-left"></i></button><button class="active">1</button><button>2</button><button>3</button><button><i data-lucide="chevron-right"></i></button></div></div> </div></div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

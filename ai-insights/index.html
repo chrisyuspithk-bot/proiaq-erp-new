@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Insights — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="grid grid-2 mb-6">   <div class="card"><div class="card-header"><h3><i data-lucide="sparkles" style="width:18px;height:18px;color:var(--teal);margin-right:6px;"></i> Predictive Analytics</h3><span class="badge badge-info pulse">Live</span></div><div class="card-body">     <div class="ai-insight-item"><div class="ai-insight-icon trend-up"><i data-lucide="trending-up"></i></div><div class="ai-insight-content"><div class="ai-insight-title">Q3 Revenue Forecast: HK$28.5M (+22% QoQ)</div><div class="ai-insight-desc">Driven by 4 new enterprise contracts in pipeline and seasonal APAC demand surge. Confidence: 87%</div></div></div>     <div class="ai-insight-item"><div class="ai-insight-icon info"><i data-lucide="package"></i></div><div class="ai-insight-content"><div class="ai-insight-title">Optimal Reorder: 3 SKUs</div><div class="ai-insight-desc">IAQ-Sensor-Pro (25 units), HEPA-Filter-XL (30 units), Carbon-Cartridge-V2 (40 units). Place orders by Jul 28 to avoid stockout.</div></div></div>     <div class="ai-insight-item"><div class="ai-insight-icon trend-down"><i data-lucide="clock"></i></div><div class="ai-insight-content"><div class="ai-insight-title">AR Risk Alert: HK$2.8M at Risk</div><div class="ai-insight-desc">3 Singapore accounts exceed 60 days. ML model predicts 40% probability of default for 1 account. Recommend escalation.</div></div></div>   </div></div>   <div class="card"><div class="card-header"><h3><i data-lucide="brain" style="width:18px;height:18px;color:var(--purple);margin-right:6px;"></i> Anomaly Detection</h3></div><div class="card-body">     <div class="ai-insight-item"><div class="ai-insight-icon alert"><i data-lucide="alert-triangle"></i></div><div class="ai-insight-content"><div class="ai-insight-title">Unusual Expense: Marketing HK$82K</div><div class="ai-insight-desc">240% above 6-month average. Category: Digital Ads — Tokyo campaign. Flagged for review.</div></div></div>     <div class="ai-insight-item"><div class="ai-insight-icon info"><i data-lucide="users"></i></div><div class="ai-insight-content"><div class="ai-insight-title">Attrition Risk: 2 Engineers</div><div class="ai-insight-desc">Engagement scores declined 18% and 22% over 90 days. Pattern matches pre-resignation behavior. Recommend retention meeting.</div></div></div>     <div class="ai-insight-item"><div class="ai-insight-icon trend-up"><i data-lucide="factory"></i></div><div class="ai-insight-content"><div class="ai-insight-title">Line 3 Efficiency Anomaly</div><div class="ai-insight-desc">OEE 8% above Lines 1 & 2. Root cause: newer equipment + optimized workflow. Recommend replicating setup.</div></div></div>   </div></div> </div> <div class="card"><div class="card-header"><h3>AI-Generated Recommendations</h3></div><div class="card-body condensed">   <div style="display:flex;flex-direction:column;gap:12px;">     <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--green-light);border-radius:12px;"><i data-lucide="lightbulb" style="color:var(--green);flex-shrink:0;"></i><div><div class="font-semibold text-sm">Bundle IAQ-Sensor-Pro with Annual Maintenance</div><div class="text-xs text-muted">Customers who buy both have 94% retention rate vs 67% sensor-only. Potential +HK$1.2M annual recurring revenue.</div></div></div>     <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--blue-light);border-radius:12px;"><i data-lucide="lightbulb" style="color:var(--blue);flex-shrink:0;"></i><div><div class="font-semibold text-sm">Expand Singapore Warehouse Capacity</div><div class="text-xs text-muted">SEA demand growing 34% YoY. Current WH-C utilization at 92%. ROI on expansion: 14 months.</div></div></div>     <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(245,158,11,0.08);border-radius:12px;"><i data-lucide="lightbulb" style="color:#F59E0B;flex-shrink:0;"></i><div><div class="font-semibold text-sm">Adjust Payment Terms for Bangkok Hospital Group</div><div class="text-xs text-muted">Current Net-60 averaging 72 days to pay. AI suggests Net-30 with 2% early discount — projected DSO improvement: 18 days.</div></div></div>   </div> </div></div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

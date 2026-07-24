@@ -266,8 +266,12 @@
     }
   });
 
+  let initialized = false;
+
   // --- Initialize Everything ---
   function init() {
+    if (initialized) return;
+    initialized = true;
     initSidebarToggle();
     initMobileSidebar();
     initNavSections();
@@ -277,14 +281,16 @@
     initResponsiveSearch();
     initLucide();
 
-    // Set active nav based on current page
     const path = window.location.pathname.split('/').pop() || 'index.html';
     setActiveNav(path);
 
     console.log('PRO-IAQ ERP Suite initialized');
   }
 
-  // Run on DOM ready
+  // Expose for shell.js to call after injection
+  window.initMain = init;
+
+  // Auto-run for non-shell pages (e.g. index.html with hardcoded sidebar)
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

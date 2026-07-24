@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Levels — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="grid grid-4 mb-6">   <div class="card kpi-card"><div class="kpi-icon teal"><i data-lucide="package"></i></div><div class="kpi-label">Total SKUs</div><div class="kpi-value">1,247</div></div>   <div class="card kpi-card"><div class="kpi-icon green"><i data-lucide="check-circle"></i></div><div class="kpi-label">In Stock</div><div class="kpi-value">1,189</div></div>   <div class="card kpi-card"><div class="kpi-icon amber"><i data-lucide="alert-triangle"></i></div><div class="kpi-label">Low Stock</div><div class="kpi-value">38</div></div>   <div class="card kpi-card"><div class="kpi-icon" style="background:var(--status-danger-bg);color:#EF4444;"><i data-lucide="x-octagon"></i></div><div class="kpi-label">Out of Stock</div><div class="kpi-value">20</div></div> </div> <div class="card"><div class="card-body condensed"> <div class="filter-bar">   <input class="form-input" placeholder="Search SKU or product..." style="min-width:240px;">   <select class="form-select"><option>All Warehouses</option><option>Tsuen Wan — WH-A</option><option>Kwai Chung — WH-B</option><option>Singapore — WH-C</option></select>   <select class="form-select"><option>All Status</option><option>In Stock</option><option>Low Stock</option><option>Out of Stock</option></select> </div> <div class="table-wrapper"><table> <thead><tr><th>SKU</th><th>Product</th><th>Warehouse</th><th>Qty on Hand</th><th>Reorder Point</th><th>Unit Cost</th><th>Status</th></tr></thead> <tbody> <tr><td class="font-medium text-mono">IAQ-SP-001</td><td>IAQ Sensor Pro v3</td><td>Tsuen Wan — WH-A</td><td class="font-semibold">8</td><td>25</td><td>HK$1,250</td><td><span class="badge badge-danger">Low Stock</span></td></tr> <tr><td class="font-medium text-mono">HEP-XL-042</td><td>HEPA Filter XL</td><td>Kwai Chung — WH-B</td><td class="font-semibold">3</td><td>15</td><td>HK$840</td><td><span class="badge badge-danger">Low Stock</span></td></tr> <tr><td class="font-medium text-mono">CAR-V2-018</td><td>Carbon Cartridge V2</td><td>Tsuen Wan — WH-A</td><td class="font-semibold">12</td><td>20</td><td>HK$380</td><td><span class="badge badge-danger">Low Stock</span></td></tr> <tr><td class="font-medium text-mono">CTL-BD-105</td><td>Control Board Rev 4</td><td>Singapore — WH-C</td><td class="font-semibold">245</td><td>50</td><td>HK$560</td><td><span class="badge badge-success">In Stock</span></td></tr> <tr><td class="font-medium text-mono">ENC-AL-032</td><td>Aluminum Enclosure IP65</td><td>Tsuen Wan — WH-A</td><td class="font-semibold">480</td><td>100</td><td>HK$195</td><td><span class="badge badge-success">In Stock</span></td></tr> <tr><td class="font-medium text-mono">SEN-PM-078</td><td>PM2.5 Sensor Module</td><td>Kwai Chung — WH-B</td><td class="font-semibold">890</td><td>200</td><td>HK$72</td><td><span class="badge badge-success">In Stock</span></td></tr> <tr><td class="font-medium text-mono">FAN-DC-056</td><td>DC Brushless Fan 120mm</td><td>Tsuen Wan — WH-A</td><td class="font-semibold">0</td><td>30</td><td>HK$48</td><td><span class="badge badge-neutral">Out of Stock</span></td></tr> <tr><td class="font-medium text-mono">CBL-USB-200</td><td>USB-C Data Cable 1.5m</td><td>Singapore — WH-C</td><td class="font-semibold">1,200</td><td>300</td><td>HK$12</td><td><span class="badge badge-success">In Stock</span></td></tr> </tbody></table></div> <div class="table-footer"><span>Showing 1–8 of 1,247 records</span> <div class="pagination"><button disabled><i data-lucide="chevron-left"></i></button><button class="active">1</button><button>2</button><button>3</button><span class="text-muted">…</span><button>156</button><button><i data-lucide="chevron-right"></i></button></div></div> </div></div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(`<div class=\"card\"><div class=\"card-body\" style=\"text-align:center;padding:64px 24px;\"><i data-lucide=\"construction\" style=\"width:48px;height:48px;color:var(--text-muted);margin-bottom:16px;\"></i><h3 style=\"margin-bottom:8px;\">Attendance</h3><p class=\"text-muted\">This module is ready for Phase 2 detailed implementation.<br>All navigation, search, and shell functionality is fully operational.</p></div></div>`);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

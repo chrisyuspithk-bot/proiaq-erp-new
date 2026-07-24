@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Pipeline — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="grid grid-4" style="align-items:start;">   <div class="card"><div class="card-header"><h3>Quoted</h3><span class="badge badge-info">5</span></div><div class="card-body condensed">     <div style="display:flex;flex-direction:column;gap:12px;">       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">IAQ-5000 Installation</div><div class="text-xs text-muted mt-1">Tokyo Air Systems K.K.</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$380,000</span><span class="badge badge-neutral">Jul 28</span></div></div>       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">Sensor Network Upgrade</div><div class="text-xs text-muted mt-1">Seoul Green Building Co.</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$245,000</span><span class="badge badge-neutral">Jul 30</span></div></div>       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">HEPA Filter Bulk Order</div><div class="text-xs text-muted mt-1">Bangkok Hospital Group</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$520,000</span><span class="badge badge-neutral">Aug 2</span></div></div>     </div>   </div></div>   <div class="card"><div class="card-header"><h3>Negotiation</h3><span class="badge badge-warning">7</span></div><div class="card-body condensed">     <div style="display:flex;flex-direction:column;gap:12px;">       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">Cleanroom Monitoring Suite</div><div class="text-xs text-muted mt-1">Samsung Biologics</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$1,200,000</span><span class="badge badge-warning">75%</span></div></div>       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">IAQ Retrofit — Phase 2</div><div class="text-xs text-muted mt-1">HK Land Holdings</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$890,000</span><span class="badge badge-warning">60%</span></div></div>       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">Annual Maintenance Contract</div><div class="text-xs text-muted mt-1">Singapore Changi Airport</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$450,000</span><span class="badge badge-warning">90%</span></div></div>     </div>   </div></div>   <div class="card"><div class="card-header"><h3>Won / Contract</h3><span class="badge badge-success">4</span></div><div class="card-body condensed">     <div style="display:flex;flex-direction:column;gap:12px;">       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">IAQ Monitoring — Data Centers</div><div class="text-xs text-muted mt-1">Equinix Hong Kong</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$2,100,000</span><span class="badge badge-success">Won</span></div></div>       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;"><div class="font-semibold text-sm">School Air Quality Program</div><div class="text-xs text-muted mt-1">HK Education Bureau</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$3,400,000</span><span class="badge badge-success">Won</span></div></div>     </div>   </div></div>   <div class="card"><div class="card-header"><h3>Lost</h3><span class="badge badge-neutral">2</span></div><div class="card-body condensed">     <div style="display:flex;flex-direction:column;gap:12px;">       <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;opacity:0.6;"><div class="font-semibold text-sm">Office Tower Fit-out</div><div class="text-xs text-muted mt-1">Shanghai Tower Mgmt</div><div class="flex items-center justify-between mt-2"><span class="text-sm font-semibold">HK$680,000</span><span class="badge badge-danger">Lost</span></div></div>     </div>   </div></div> </div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

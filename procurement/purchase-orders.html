@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Orders — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="card"><div class="card-body condensed"> <div class="filter-bar">   <input class="form-input" placeholder="Search POs..." style="min-width:240px;">   <select class="form-select"><option>All Status</option><option>Draft</option><option>Approved</option><option>Received</option><option>Cancelled</option></select>   <button class="btn-primary btn-sm"><i data-lucide="plus"></i> New PO</button> </div> <div class="table-wrapper"><table> <thead><tr><th>PO #</th><th>Supplier</th><th>Date</th><th>Delivery</th><th>Amount</th><th>Status</th><th></th></tr></thead> <tbody> <tr><td class="font-medium">PO-2026-0892</td><td>Tai Hing Supplies Ltd</td><td>22 Jul 2026</td><td>05 Aug 2026</td><td class="font-semibold">HK$142,500</td><td><span class="badge badge-success">Approved</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">PO-2026-0887</td><td>Shenzhen Electronics Co.</td><td>20 Jul 2026</td><td>02 Aug 2026</td><td class="font-semibold">HK$87,200</td><td><span class="badge badge-success">Approved</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">PO-2026-0880</td><td>Singapore Precision Parts</td><td>18 Jul 2026</td><td>28 Jul 2026</td><td class="font-semibold">HK$310,000</td><td><span class="badge badge-info">In Transit</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">PO-2026-0875</td><td>Tokyo Sensor Corp</td><td>15 Jul 2026</td><td>25 Jul 2026</td><td class="font-semibold">HK$560,000</td><td><span class="badge badge-success">Received</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">PO-2026-0870</td><td>Bangkok Packaging Ltd</td><td>12 Jul 2026</td><td>26 Jul 2026</td><td class="font-semibold">HK$38,400</td><td><span class="badge badge-warning">Pending</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> <tr><td class="font-medium">PO-2026-0865</td><td>Shanghai Metalworks</td><td>08 Jul 2026</td><td>22 Jul 2026</td><td class="font-semibold">HK$215,000</td><td><span class="badge badge-success">Received</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="eye"></i></button></td></tr> </tbody></table></div> <div class="table-footer"><span>Showing 1–6 of 48 purchase orders</span> <div class="pagination"><button disabled><i data-lucide="chevron-left"></i></button><button class="active">1</button><button>2</button><button>3</button><button><i data-lucide="chevron-right"></i></button></div></div> </div></div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

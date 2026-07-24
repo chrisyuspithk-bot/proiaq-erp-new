@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees — PRO-IAQ ERP Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="wave-bg"></div>
+<div id="shell-app"></div>
+<script src="../js/main.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/shell.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    PROIAQ.pageContent(` <div class="card"><div class="card-body condensed"> <div class="filter-bar">   <input class="form-input" placeholder="Search employees..." style="min-width:240px;">   <select class="form-select"><option>All Departments</option><option>Engineering</option><option>Sales</option><option>Operations</option><option>Finance</option><option>HR</option></select>   <select class="form-select"><option>All Locations</option><option>Hong Kong</option><option>Singapore</option><option>Tokyo</option><option>Shanghai</option></select>   <button class="btn-primary btn-sm"><i data-lucide="user-plus"></i> Add Employee</button> </div> <div class="table-wrapper"><table> <thead><tr><th>Employee</th><th>Department</th><th>Position</th><th>Location</th><th>Join Date</th><th>Status</th><th></th></tr></thead> <tbody> <tr><td><div class="font-medium">Emily Chan</div><div class="text-xs text-muted">emily.chan@proiaq.hk</div></td><td>Engineering</td><td>Senior IAQ Engineer</td><td>Hong Kong</td><td>12 Mar 2022</td><td><span class="badge badge-success">Active</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">Kenji Tanaka</div><div class="text-xs text-muted">k.tanaka@proiaq.jp</div></td><td>Sales</td><td>Regional Sales Director</td><td>Tokyo</td><td>05 Aug 2023</td><td><span class="badge badge-success">Active</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">Wei Ling Tan</div><div class="text-xs text-muted">wl.tan@proiaq.sg</div></td><td>Operations</td><td>Supply Chain Manager</td><td>Singapore</td><td>18 Jan 2024</td><td><span class="badge badge-success">Active</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">David Wong</div><div class="text-xs text-muted">d.wong@proiaq.hk</div></td><td>Finance</td><td>Financial Controller</td><td>Hong Kong</td><td>01 Jun 2021</td><td><span class="badge badge-success">Active</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">Lisa Kim</div><div class="text-xs text-muted">l.kim@proiaq.kr</div></td><td>Engineering</td><td>Firmware Engineer</td><td>Seoul</td><td>22 Sep 2024</td><td><span class="badge badge-warning">On Leave</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">Raj Patel</div><div class="text-xs text-muted">r.patel@proiaq.hk</div></td><td>IT</td><td>Systems Administrator</td><td>Hong Kong</td><td>14 Feb 2023</td><td><span class="badge badge-success">Active</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">Sophie Laurent</div><div class="text-xs text-muted">s.laurent@proiaq.sg</div></td><td>Marketing</td><td>Marketing Manager</td><td>Singapore</td><td>03 Nov 2023</td><td><span class="badge badge-success">Active</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> <tr><td><div class="font-medium">Michael Cheung</div><div class="text-xs text-muted">m.cheung@proiaq.hk</div></td><td>Production</td><td>Production Supervisor</td><td>Hong Kong</td><td>09 Jul 2020</td><td><span class="badge badge-danger">Notice</span></td><td><button class="btn-ghost btn-sm"><i data-lucide="more-horizontal"></i></button></td></tr> </tbody></table></div> <div class="table-footer"><span>Showing 1–8 of 213 employees</span> <div class="pagination"><button disabled><i data-lucide="chevron-left"></i></button><button class="active">1</button><button>2</button><button>3</button><span class="text-muted">…</span><button>27</button><button><i data-lucide="chevron-right"></i></button></div></div> </div></div> `);
+    if(typeof lucide!=="undefined")lucide.createIcons();
+  },100);
+});
+</script>
+</body>
+</html>

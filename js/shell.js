@@ -129,20 +129,12 @@
 
     const currentPath = getCurrentPath();
     const isDashboard = currentPath === 'index.html';
-    const breadcrumbSegments = currentPath.replace(/\.html$/, '').replace(/-/g, ' ').split('/');
-    const pageTitle = breadcrumbSegments[breadcrumbSegments.length - 1]
+    const pathSegments = currentPath.replace(/\.html$/, '').replace(/-/g, ' ').split('/');
+    const pageTitle = pathSegments[pathSegments.length - 1]
       .replace(/\b\w/g, c => c.toUpperCase());
-    const moduleName = breadcrumbSegments.length > 1
-      ? breadcrumbSegments[0].replace(/\b\w/g, c => c.toUpperCase())
+    const moduleName = pathSegments.length > 1
+      ? pathSegments[0].replace(/\b\w/g, c => c.toUpperCase())
       : '';
-
-    const breadcrumbHtml = breadcrumbSegments.map((seg, i) => {
-      const label = seg.replace(/\b\w/g, c => c.toUpperCase());
-      if (i === breadcrumbSegments.length - 1) {
-        return `<span>${label}</span>`;
-      }
-      return `<a href="${breadcrumbSegments.slice(0, i + 1).join('/')}/index.html">${label}</a>`;
-    }).join('<i data-lucide="chevron-right"></i>');
 
     app.innerHTML = `
 <div class="app-shell">
@@ -211,11 +203,6 @@
     <div class="content-area">
       <div class="page-header">
         <div class="page-header-left">
-          <div class="breadcrumbs">
-            <a href="index.html"><i data-lucide="home"></i></a>
-            <i data-lucide="chevron-right"></i>
-            ${breadcrumbHtml}
-          </div>
           <h1>${pageTitle}${isDashboard ? ' — Executive Overview' : ''}</h1>
           <p class="text-sm text-muted">${isDashboard ? 'FY 2026 · PRO-IAQ HK Ltd.' : moduleName + ' Module'}</p>
         </div>

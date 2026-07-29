@@ -10,8 +10,12 @@
   // Detect current page path for active nav highlighting
   function getCurrentPath() {
     const p = window.location.pathname;
-    // Remove leading slash, trailing index.html
     return p.replace(/^\/+/, '').replace(/\/index\.html$/, '') || 'index.html';
+  }
+
+  // --- Company Name (localStorage, fallback default) ---
+  function getCompanyName() {
+    return localStorage.getItem('proiaq_company_name') || 'PRO-IAQ HK Ltd.';
   }
 
   // Navigation structure
@@ -187,7 +191,7 @@
       <div class="header-actions">
         <div class="company-switcher">
           <i data-lucide="building-2"></i>
-          <span>PRO-IAQ HK Ltd.</span>
+          <span>' + getCompanyName() + '</span>
           <i data-lucide="chevron-down" style="width:14px;height:14px;"></i>
         </div>
         <div class="header-divider"></div>
@@ -211,7 +215,7 @@
       <div class="page-header">
         <div class="page-header-left">
           <h1>${pageTitle}${isDashboard ? ' — Executive Overview' : ''}</h1>
-          <p class="text-sm text-muted">${isDashboard ? 'FY 2026 · PRO-IAQ HK Ltd.' : moduleName + ' Module'}</p>
+          <p class="text-sm text-muted">${isDashboard ? 'FY 2026 · ' + getCompanyName() : moduleName + ' Module'}</p>
         </div>
         <div class="page-header-actions">
           <button class="btn-secondary btn-sm"><i data-lucide="download"></i> Export</button>
@@ -253,6 +257,48 @@
     }
   };
 
+  // --- Company Name Setup Modal (first visit only) ---
+  function showCompanySetup() {
+    if (localStorage.getItem('proiaq_company_name')) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'setup-overlay';
+    overlay.innerHTML =
+      '<div class="setup-modal">' +
+        '<div class="setup-icon"><i data-lucide="building-2"></i></div>' +
+        '<h2>Welcome to PRO-IAQ ERP</h2>' +
+        '<p class="text-muted">Enter your company name to get started.</p>' +
+        '<input type="text" id="companyNameInput" class="form-input" style="font-size:1rem;padding:12px 16px;width:100%;border:2px solid var(--border);border-radius:12px;" placeholder="e.g. ClearAir Technologies Ltd." autofocus>' +
+        '<div class="setup-actions" style="margin-top:20px;">' +
+          '<button id="saveCompanyBtn" class="btn-primary" style="width:100%;justify-content:center;padding:12px;font-size:0.9375rem;">Get Started <i data-lucide="arrow-right"></i></button>' +
+        '</div>' +
+        '<p style="margin-top:16px;font-size:0.75rem;color:var(--text-muted);text-align:center;">You can change this later in Settings → Company.</p>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    lucide.createIcons();
+
+    const input = document.getElementById('companyNameInput');
+    const btn = document.getElementById('saveCompanyBtn');
+
+    function save() {
+      const name = input.value.trim() || 'PRO-IAQ HK Ltd.';
+      localStorage.setItem('proiaq_company_name', name);
+      overlay.classList.add('fade-out');
+      setTimeout(function () {
+        overlay.remove();
+        injectShell();
+        if (typeof window.initMain === 'function') window.initMain();
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }, 300);
+    }
+
+    btn.addEventListener('click', save);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') save();
+    });
+    setTimeout(function () { input.focus(); }, 300);
+  }
+
   // Auto-inject on DOM ready
   function init() {
     injectShell();
@@ -262,6 +308,8 @@
     if (typeof lucide !== 'undefined') {
       setTimeout(() => lucide.createIcons(), 50);
     }
+    // Show company setup modal on first visit
+    setTimeout(function () { showCompanySetup(); }, 200);
   }
 
   if (document.readyState === 'loading') {

@@ -1341,3 +1341,18 @@ textarea.form-input { resize: vertical; min-height: 80px; }
 @media (prefers-color-scheme: dark) {
   /* Retain light SaaS design - add dark fallback class if needed */
 }
+
+/* ============================================================
+   COMPANY NAME SETUP MODAL
+   ============================================================ */
+.setup-overlay{position:fixed;inset:0;z-index:10000;background:rgba(10,22,40,0.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;animation:setupFadeIn .4s ease}
+.setup-overlay.fade-out{animation:setupFadeOut .3s ease forwards;pointer-events:none}
+.setup-modal{background:#fff;border-radius:24px;padding:48px 40px 36px;max-width:440px;width:90%;text-align:center;box-shadow:0 24px 80px rgba(10,22,40,0.4);animation:setupSlideUp .5s ease}
+.setup-modal h2{font-size:1.375rem;font-weight:700;margin:0 0 8px;color:#0A1628}
+.setup-modal p{margin:0 0 24px;font-size:.875rem;line-height:1.5}
+.setup-icon{width:64px;height:64px;border-radius:20px;background:linear-gradient(135deg,#1E88E5,#00BFA5);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:#fff}
+.setup-modal .btn-primary{background:linear-gradient(135deg,#1E88E5,#2196F3);color:#fff;border:none;border-radius:12px;font-weight:600;display:flex;align-items:center;gap:8px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.setup-modal .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(30,136,229,0.35)}
+@keyframes setupFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes setupFadeOut{from{opacity:1}to{opacity:0}}
+@keyframes setupSlideUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}
